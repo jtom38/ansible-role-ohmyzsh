@@ -1,0 +1,11 @@
+---
+- name: Ensure requirements are satisfied
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: true
+  loop: "{{ packages }}"
+  vars:
+    packages:
+      - git
+      - zsh

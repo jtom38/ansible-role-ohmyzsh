@@ -1,0 +1,12 @@
+---
+
+- name: Ensure requirements are satisfied
+  yum:
+    name: "{{ item }}"
+    state: present
+  become: true
+  loop: "{{ packages }}"
+  vars:
+    packages:
+      - git
+      - zsh
