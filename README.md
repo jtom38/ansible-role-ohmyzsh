@@ -17,7 +17,7 @@ Take the name of the plugin that you want to use and add it to `zsh_plugins`.
 
 ## Platforms
 
-Currently, this supports 
+Currently, this supports centos and ubuntu but should work on others.
 
 ## Variables
 
