@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    zsh_backup: false
+    zsh_ohmyzsh_install: /home/user
+    
+  roles:
+    - role: ansible-role-ohmyzsh

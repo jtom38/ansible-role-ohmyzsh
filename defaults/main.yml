@@ -1,0 +1,17 @@
+---
+
+zsh_download_url: ''
+zsh_path: "$HOME/bin:/usr/local/bin:$PATH"
+zsh_ohmyzsh_instll: ''
+zsh_theme: 'robbyrussell'
+zsh_theme_random_candidates: 'robbyrussell agonster'
+zsh_case_sensitive: false
+zsh_hyphen_insensitive: false
+zsh_disable_auto_update: false
+zsh_update_days: 13
+zsh_disable_ls_colors: false
+zsh_disable_auto_title: false
+zsh_enable_correction: false
+zsh_completion_waiting_dots: false
+zsh_disable_untracked_files_dirty: false
+zsh_hist_stamps: ''

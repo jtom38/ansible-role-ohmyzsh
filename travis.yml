@@ -1,0 +1,22 @@
+---
+language: python
+services: docker
+
+env:
+  global:
+    - ROLE_NAME: docker
+  matric:
+    - MOLECULE_DISTRO: centos7
+    - MOLECULE_DISTRO: ubuntu1804
+
+
+install:
+  - pip install molecule docker
+
+before_script:
+  - cd ../
+  - mv ansible-role-ohmyzsh luther38.ohmyzsh
+  - cd luther38.ohmyzsh
+
+script:
+  - molecule converge

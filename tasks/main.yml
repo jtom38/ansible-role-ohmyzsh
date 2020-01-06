@@ -1,0 +1,38 @@
+---
+#- include_tasks: debian.yml
+#  when: ansible_os_family == 'Debian'
+
+#- include_tasks: redhat.yml
+#  when: ansible_os_family == 'Redhat'
+
+- name: Ensure requirements are satisfied
+  package:
+    name: "{{ item }}"
+    state: present
+  become: true
+  loop: "{{ packages }}"
+  vars:
+    packages:
+      - git
+      - zsh
+
+- name: clone repo
+  git:
+    clone: true
+    repo: https://github.com/ohmyzsh/ohmyzsh
+    dest: '~/.oh-my-zsh'
+
+- name: Download external .zshrc file
+  get_url:
+    url: "{{ zsh_download_url }}"
+    dest: "~/.zshrc"
+  when:
+    - zsh_download_url != ''
+
+- name: Place generated .zshrc file
+  template:
+    backup: "{{ zsh_backup | default('false') }}"
+    src: 'zshrc.j2'
+    dest: '~/.zshrc'
+  when:
+    - zsh_download_url == ''
