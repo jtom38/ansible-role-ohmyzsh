@@ -15,8 +15,9 @@ install:
 
 before_script:
   - cd ../
-  - mv ansible-role-ohmyzsh luther38.ohmyzsh
-  - cd luther38.ohmyzsh
+  #- mv ansible-role-ohmyzsh luther38.ohmyzsh
+  #- cd luther38.ohmyzsh
+  - cd ansible-role-ohmyzsh
 
 script:
   - molecule converge
